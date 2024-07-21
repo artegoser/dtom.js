@@ -1,6 +1,6 @@
 {
-  "name": "dtom",
-  "version": "1.0.0",
+  "name": "dtom.js",
+  "version": "1.1.0",
   "description": "tampermonkey script for removing unnecessary functions on websites ",
   "main": "index.js",
   "type": "module",

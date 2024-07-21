@@ -1,15 +1,16 @@
 import terser from "@rollup/plugin-terser";
+import pkg from "./package.json" with { type: "json" };
 
 const banner = `
 // ==UserScript==
-// @name         DTOM.js
+// @name         ${pkg.name}
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
-// @description  Don't tread on me!
-// @author       artegoser
-// @homepage     https://github.com/artegoser/dtom.js
-// @updateURL    https://github.com/artegoser/dtom.js/dist/dtom.min.js
-// @downloadURL  https://github.com/artegoser/dtom.js/dist/dtom.min.js
+// @version      ${pkg.version}
+// @description  ${pkg.description}
+// @author       ${pkg.author}
+// @homepage     ${pkg.homepage}
+// @updateURL    https://github.com/artegoser/dtom.js/dist/dtom.min.user.js
+// @downloadURL  https://github.com/artegoser/dtom.js/dist/dtom.min.user.js
 // @match        *://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=github.com
 // @grant        none
@@ -19,7 +20,7 @@ const banner = `
 export default {
   input: "src/app.js",
   output: {
-    file: "dist/dtom.min.js",
+    file: "dist/dtom.min.user.js",
     format: "es",
     banner: banner.trim(),
   },

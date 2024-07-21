@@ -1,4 +1,6 @@
-export function disableRedirects() {
+import { match } from "../lib.js";
+
+function disableRedirects() {
   for (let element of document.querySelectorAll("a")) {
     let newLink = document.createElement("a");
 
@@ -8,4 +10,10 @@ export function disableRedirects() {
 
     element.replaceWith(newLink);
   }
+}
+
+export default function google() {
+  match("google.com", "/search", () => {
+    disableRedirects();
+  });
 }
